@@ -65,8 +65,11 @@ contact: 'team@carpentries.org' # FIXME
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
-- introduction.md
+episodes:
+- system-python.md
+- scripts.md
+- projects.md
+- tools.md
 
 # Information for Learners
 learners: 
