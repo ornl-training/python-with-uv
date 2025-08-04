@@ -197,12 +197,20 @@
                   <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         Summary and Schedule
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#learning-objectives">Learning Objectives</a></li>
+<li><a href="#installing-uv">Installing uv</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -267,15 +275,33 @@
       <hr></nav><main id="main-content" class="main-content"><h1 class="schedule-heading">Summary and Schedule</h1>
       
 
-<p>This is a new lesson built with <a href="https://carpentries.github.io/sandpaper-docs" class="external-link">The Carpentries
-Workbench</a>.</p>
+<p>This lesson introduces <a href="https://docs.astral.sh/uv/" class="external-link">uv</a>
+which is a universal tool for installing Python and managing
+dependencies for Python projects.</p>
+<section><h2 class="section-heading" id="learning-objectives">Learning Objectives<a class="anchor" aria-label="anchor" href="#learning-objectives"></a></h2>
+<hr class="half-width"><p>After attending this workshop, participants will be able to:</p>
+<ul><li>Easily install Python on macOS, Linux, and Windows operating
+systems.</li>
+<li>Manage package dependencies for a Python project without worrying
+about version conflicts.</li>
+<li>Install Python packages as command line tools.</li>
+<li>Create a reproducible and maintainable Python environment for
+collaborative project development.</li>
+</ul></section><section><h2 class="section-heading" id="installing-uv">Installing uv<a class="anchor" aria-label="anchor" href="#installing-uv"></a></h2>
+<hr class="half-width"><p>The only requirement for this workshop is the uv tool. Detailed
+installation instructions are given in the <a href="https://docs.astral.sh/uv/getting-started/installation/" class="external-link">uv
+documentation</a> but the main macOS, Linux, and Windows installation
+commands are presented below.</p>
+<p>Install uv on macOS and Linux with:</p>
+<pre><code>curl -LsSf https://astral.sh/uv/install.sh | sh</code></pre>
+<p>Install uv on Windows with:</p>
+<pre><code>powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"</code></pre>
+<p>That’s it! You are now ready to run Python code.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-
-
-      <section id="schedule"><table class="table table schedule table-striped" role="presentation"><tbody><tr><td></td><td><a href="#setup">Setup Instructions</a></td><td> Download files required for the lesson</td>
+</section><section id="schedule"><table class="table table schedule table-striped" role="presentation"><tbody><tr><td></td><td><a href="#setup">Setup Instructions</a></td><td> Download files required for the lesson</td>
           </tr><tr><td>
 <span class="visually-hidden">Duration: </span>00h 00m
 </td>
