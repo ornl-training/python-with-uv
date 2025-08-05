@@ -244,7 +244,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="system-python.html">1. System Python</a>
+        <a href="system-python.html">1. Operating System Python</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -256,7 +256,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="scripts.html">2. Python Scripts</a>
+        <a href="scripts.html">2. Running Python Scripts</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -344,25 +344,169 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="aio-system-python"><p>Content from <a href="system-python.html">System Python</a></p>
+<section id="aio-system-python"><p>Content from <a href="system-python.html">Operating System Python</a></p>
 <hr>
-<p>Last updated on 2025-08-04 |
+<p>Last updated on 2025-08-05 |
 
         <a href="https://github.com/ornl-training/python-with-uv/edit/main/episodes/system-python.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 7 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
-<p>Discuss operating system Python here.</p></section><section id="aio-scripts"><p>Content from <a href="scripts.html">Python Scripts</a></p>
+<section><h2 class="section-heading" id="why-not-use-the-operating-systems-python">Why not use the operating system’s Python?<a class="anchor" aria-label="anchor" href="#why-not-use-the-operating-systems-python"></a>
+</h2>
+<hr class="half-width">
+<p>Operating systems such as the various flavors of Linux include Python
+as part of their installation. So why not use this Python instead of
+installing a separate version? There are many reasons to not use the
+system Python:</p>
+<ul>
+<li>
+<strong>Risk of breaking the system tools</strong>. Many operating
+systems use their system Python installation to run essential tools.
+Installing or upgrading Python packages globally can break these tools
+or even destabilize the operating system.</li>
+<li>
+<strong>Permission issues</strong>. Modifying the system Python
+usually requires administrator or root privileges, which is a security
+risk and an inconvenience.</li>
+<li>
+<strong>Version conflicts</strong>. The system Python version is
+often outdated and may not match the requirements of your project.
+Different projects may require different Python or package versions,
+which system Python cannot flexibly support.</li>
+<li>
+<strong>Reproducibility problems</strong>. Sharing code or deploying
+to other machines becomes unreliable because system Python versions and
+installed packages can vary widely across platforms.</li>
+<li>
+<strong>Lack of flexibility and control</strong>. You have little
+control over the version of Python installed with your operating system,
+and you might not be able to use newer features unless the OS itself
+updates to a new version.</li>
+</ul>
+<p>Using uv eliminates all of these issues.</p>
+<div id="check-your-system-python" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="check-your-system-python" class="callout-inner">
+<h3 class="callout-title">Check your system Python</h3>
+<div class="callout-content">
+<p>What version of Python is your operating system running? You can
+check this by running <code>python --version</code> or
+<code>python3 --version</code> in your terminal which should display the
+Python version. If the command is not found, then Python is not
+installed on your system, which is fine because we will be using uv for
+Python installation.</p>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-scripts"><p>Content from <a href="scripts.html">Running Python Scripts</a></p>
 <hr>
-<p>Last updated on 2025-08-04 |
+<p>Last updated on 2025-08-05 |
 
         <a href="https://github.com/ornl-training/python-with-uv/edit/main/episodes/scripts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 7 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
-<p>Discuss running Python scripts with uv here.</p></section><section id="aio-projects"><p>Content from <a href="projects.html">Python Projects</a></p>
+<section><h2 class="section-heading" id="what-is-a-python-script">What is a Python script?<a class="anchor" aria-label="anchor" href="#what-is-a-python-script"></a>
+</h2>
+<hr class="half-width">
+<p>A Python script is just a Python file like <code>example.py</code>. A
+Python file is also referred to as a module in the context of a Python
+package but for this lesson we will use the script definition.</p>
+</section><section><h2 class="section-heading" id="running-a-script-with-uv">Running a script with uv<a class="anchor" aria-label="anchor" href="#running-a-script-with-uv"></a>
+</h2>
+<hr class="half-width">
+<p>Below is the contents of a Python script named
+<code>example.py</code>. This script does not have any external
+dependencies. It only uses features available in the Python standard
+library.</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># example.py</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Script using standard Python"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Random number is"</span>, random.random())</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>    main()</span></code></pre>
+</div>
+<p>Use the following command to run the script with uv:</p>
+<pre><code>uv run example.py</code></pre>
+</section><section><h2 class="section-heading" id="running-a-script-that-has-dependencies-with-uv">Running a script that has dependencies with uv<a class="anchor" aria-label="anchor" href="#running-a-script-that-has-dependencies-with-uv"></a>
+</h2>
+<hr class="half-width">
+<p>Below is the contents of another Python script named
+<code>example2.py</code>. This script imports the NumPy package which is
+an external dependency (not included in Python).</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># example2.py</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hello from NumPy!"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>    a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"a is"</span>, a)</span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>    main()</span></code></pre>
+</div>
+<p>To run this code, uv must install the NumPy package so it can be
+imported by the script. The command shown below will add a script
+section that provides the Python version and list of dependencies.</p>
+<pre><code>uv add —-script example2.py numpy</code></pre>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># /// script</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co"># requires-python = "&gt;=3.13"</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co"># dependencies = [</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co">#     "numpy",</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co"># ]</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co"># ///</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hello from NumPy!"</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>    a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"a is"</span>, a)</span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a>    main()</span></code></pre>
+</div>
+<p>Now you can run the script using the same run command used in the
+previous example:</p>
+<pre><code>uv run example2.py</code></pre>
+<p>By including the <code>/// script</code> section in a Python script,
+anyone can run a Python file using uv.</p>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-projects"><p>Content from <a href="projects.html">Python Projects</a></p>
 <hr>
 <p>Last updated on 2025-08-04 |
 
@@ -427,7 +571,7 @@
   "creativeWorkStatus": "active",
   "url": "https://ornl-training.github.io/python-with-uv/instructor/aio.html",
   "identifier": "https://ornl-training.github.io/python-with-uv/instructor/aio.html",
-  "dateCreated": "2025-08-04",
+  "dateCreated": "2025-08-05",
   "dateModified": "2025-08-05",
   "datePublished": "2025-08-05"
 }
