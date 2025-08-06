@@ -267,7 +267,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="projects.html">3. Python Projects</a>
+        <a href="projects.html">3. Working with Python Projects</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -506,15 +506,128 @@ any dependencies needed to run the script.</p>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section><section id="aio-projects"><p>Content from <a href="projects.html">Python Projects</a></p>
+</section></section><section id="aio-projects"><p>Content from <a href="projects.html">Working with Python Projects</a></p>
 <hr>
-<p>Last updated on 2025-08-04 |
+<p>Last updated on 2025-08-06 |
 
         <a href="https://github.com/ornl-training/python-with-uv/edit/main/episodes/projects.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
-<p>Discuss working with Python projects using uv here.</p></section><section id="aio-tools"><p>Content from <a href="tools.html">Using Python Tools</a></p>
+<section><h2 class="section-heading" id="what-is-a-python-project">What is a Python project?<a class="anchor" aria-label="anchor" href="#what-is-a-python-project"></a>
+</h2>
+<hr class="half-width">
+<p>A Python project is a directory containing multiple Python files. The
+metadata for the Python project is contained in a
+<code>pyproject.toml</code> file which contains information about the
+Python version required for the project as well as dependencies required
+by the project.</p>
+</section><section><h2 class="section-heading" id="create-a-python-project-with-uv">Create a Python Project with uv<a class="anchor" aria-label="anchor" href="#create-a-python-project-with-uv"></a>
+</h2>
+<hr class="half-width">
+<p>Use the init command in uv to create a directory for a Python
+project. The command shown below creates a directory called my-project
+that represents a Python project.</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">uv</span> init my-project</span></code></pre>
+</div>
+<p>The contents of the directory is shown below. Notice that uv
+automatically sets up the directory as a Git repository and includes an
+ignore file to prevent unnecessary files from being committed to version
+control.</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="bu">cd</span> my-project</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>my-project/
+├── .git/
+├── .gitignore
+├── .python-version
+├── main.py
+├── pyproject.toml
+└── README.md</code></pre>
+</div>
+<p>You can also use uv to add dependencies to the project. Here we add
+the NumPy package to the project which will automatically create a
+virtual environment and install the NumPy package into the virtual
+environment.</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">uv</span> add numpy</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>my-project/
+├── .git/
+├── .gitignore
+├── .python-version
+├── .venv/
+├── main.py
+├── pyproject.toml
+├── README.md
+└── uv.lock</code></pre>
+</div>
+<p>Notice that uv automatically added the NumPy package as a dependency
+of the project to the <code>pyproject.toml</code> file:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">TOML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode toml" tabindex="0"><code class="sourceCode toml"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># pyproject.toml</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="kw">[project]</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="dt">name</span> <span class="op">=</span> <span class="st">"my-project"</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="dt">version</span> <span class="op">=</span> <span class="st">"0.1.0"</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="dt">description</span> <span class="op">=</span> <span class="st">"Add your description here"</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="dt">readme</span> <span class="op">=</span> <span class="st">"README.md"</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="dt">requires-python</span> <span class="op">=</span> <span class="st">"&gt;=3.13"</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="dt">dependencies</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>    <span class="st">"numpy&gt;=2.3.0"</span><span class="op">,</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="op">]</span></span></code></pre>
+</div>
+<p>Lastly, to run a script in the project, just use the uv run
+command:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">uv</span> run main.py</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Hello from my-project!
+a is [1 2 3 4 5]</code></pre>
+</div>
+</section><section><h2 class="section-heading" id="collaborate-on-python-projects-with-uv">Collaborate on Python Projects with uv<a class="anchor" aria-label="anchor" href="#collaborate-on-python-projects-with-uv"></a>
+</h2>
+<hr class="half-width">
+<p>Collaborating on a Python project can be a daunting task because
+everyone needs to use the same version of Python and have the same
+dependencies (and versions of dependencies) installed in their virtual
+environment. However, uv makes collaboration very simple because it
+handles all of the installation steps for you. The basic steps for
+collaborating on a Python project with uv are:</p>
+<ol style="list-style-type: decimal">
+<li>Download and install uv</li>
+<li>Download the Python project</li>
+<li>Run the Python code in the project with uv</li>
+</ol>
+<p>That’s it! There is no need to install Python on your computer, or
+create and activate a virtual environment, or install dependencies for
+running code in the Python project. This is all handled by uv when you
+run the code.</p>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-tools"><p>Content from <a href="tools.html">Using Python Tools</a></p>
 <hr>
 <p>Last updated on 2025-08-06 |
 
