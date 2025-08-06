@@ -33,7 +33,7 @@ Use the following command to run the script with uv:
 uv run example.py
 ```
 
-## Running a script that has dependencies with uv
+## Running a script with dependencies
 
 Below is the contents of another Python script named `example2.py`. This script imports the NumPy package which is an external dependency (not included in Python).
 
@@ -82,10 +82,10 @@ if __name__ == "__main__":
     main()
 ```
 
-Now you can run the script using the same run command used in the previous example:
+Now you can execute the script using the same run command used in the previous example:
 
 ```
 uv run example2.py
 ```
 
-By including the `/// script` section in a Python script, anyone can run a Python file using uv.
+By including the script section in a Python script, anyone can run that Python file with uv. You don't have to worry about installing Python or creating a virtual environment and downloading dependencies. You just use uv to run the file and it will automatically install Python if it isn't available on your computer and it will automatically install any dependencies needed to run the script.
