@@ -405,7 +405,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-scripts"><p>Content from <a href="scripts.html">Running Python Scripts</a></p>
 <hr>
-<p>Last updated on 2025-08-06 |
+<p>Last updated on 2025-08-07 |
 
         <a href="https://github.com/ornl-training/python-with-uv/edit/main/episodes/scripts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -469,7 +469,7 @@ an external dependency (not included in Python).</p>
 <p>To run this code, uv must install the NumPy package so it can be
 imported by the script. The command shown below will add a script
 section that provides the Python version and list of dependencies.</p>
-<pre><code>uv add —-script example2.py numpy</code></pre>
+<pre><code>uv add numpy --script example2.py</code></pre>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -502,11 +502,17 @@ Python or creating a virtual environment and downloading dependencies.
 You just use uv to run the file and it will automatically install Python
 if it isn’t available on your computer and it will automatically install
 any dependencies needed to run the script.</p>
-<!--
+</section><section><h2 class="section-heading" id="demo">Demo<a class="anchor" aria-label="anchor" href="#demo"></a>
+</h2>
+<hr class="half-width">
+<p>Here is a demo of using uv to run a Python script that imports the
+NumPy package. This recording is animated text (not video);
+consequently, the text for each command is selectable and can be copied
+and pasted into your own terminal.</p>
+<script src="https://asciinema.org/a/WAai54d95xSKIHCfTOQFpS6YX.js" id="asciicast-WAai54d95xSKIHCfTOQFpS6YX" async="true"></script><!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- -->
-</section></section><section id="aio-projects"><p>Content from <a href="projects.html">Working with Python Projects</a></p>
+ --></section></section><section id="aio-projects"><p>Content from <a href="projects.html">Working with Python Projects</a></p>
 <hr>
 <p>Last updated on 2025-08-06 |
 
