@@ -57,7 +57,7 @@ if __name__ == "__main__":
 To run this code, uv must install the NumPy package so it can be imported by the script. The command shown below will add a script section that provides the Python version and list of dependencies.
 
 ```
-uv add —-script example2.py numpy
+uv add numpy --script example2.py
 ```
 
 ```python
@@ -89,3 +89,10 @@ uv run example2.py
 ```
 
 By including the script section in a Python script, anyone can run that Python file with uv. You don't have to worry about installing Python or creating a virtual environment and downloading dependencies. You just use uv to run the file and it will automatically install Python if it isn't available on your computer and it will automatically install any dependencies needed to run the script.
+
+## Demo
+
+Here is a demo of using uv to run a Python script that imports the NumPy package. This recording is animated text (not video); consequently, the text for each command is selectable and can be copied and pasted into your own terminal.
+
+<script src="https://asciinema.org/a/WAai54d95xSKIHCfTOQFpS6YX.js" id="asciicast-WAai54d95xSKIHCfTOQFpS6YX" async="true"></script>
+
