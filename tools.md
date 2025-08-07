@@ -75,3 +75,9 @@ genja v25.3.1
 - genja 
 ```
 
+## Demo
+
+Time for a demo of uv tool.
+
+<script src="https://asciinema.org/a/GjafY19S5PktSmK365hPkOLG1.js" id="asciicast-GjafY19S5PktSmK365hPkOLG1" async="true"></script>
+
