@@ -4,6 +4,17 @@ teaching: 10 # teaching time in minutes
 exercises: 2 # exercise time in minutes
 ---
 
+:::::: questions
+- What is a Python project?
+- How do I create a Python project and run it?
+::::::
+
+:::::: objectives
+- Create a Python project with uv.
+- Add dependencies to a Python project and run code.
+- Collaborate on a Python project with other developers.
+::::::
+
 ## What is a Python project?
 
 A Python project is a directory containing multiple Python files. The metadata for the Python project is contained in a `pyproject.toml` file which contains information about the Python version required for the project as well as dependencies required by the project.
@@ -86,3 +97,8 @@ Collaborating on a Python project can be a daunting task because everyone needs 
 3. Run the Python code in the project with uv
 
 That's it! There is no need to install Python on your computer, or create and activate a virtual environment, or install dependencies for running code in the Python project. This is all handled by uv when you run the code.
+
+:::::: keypoints
+- A Python project is just a directory of Python files with a `pyproject.toml` file for configuration.
+- Use uv to easily add dependencies to a Python project and collaborate with other developers.
+::::::
