@@ -343,10 +343,38 @@
         
         
 <section id="system-python"><h2 class="section-heading"><a href="system-python.html">Operating System Python</a></h2>
-<hr class="half-width"></section><section id="scripts"><h2 class="section-heading"><a href="scripts.html">Running Python Scripts</a></h2>
-<hr class="half-width"></section><section id="projects"><h2 class="section-heading"><a href="projects.html">Working with Python Projects</a></h2>
-<hr class="half-width"></section><section id="tools"><h2 class="section-heading"><a href="tools.html">Using Python Tools</a></h2>
-<hr class="half-width"></section>
+<hr class="half-width">
+<ul>
+<li>Do not use the Python included with your operation system. Using the
+system Python can break system tools, cause permission errors, introduce
+version conflicts, limit reproducibility and flexibility with code
+development.</li>
+<li>Use a tool like uv to install and manage Python instead of using the
+system Python. This will avoid all the issues associated with using the
+operating system Python.</li>
+</ul></section><section id="scripts"><h2 class="section-heading"><a href="scripts.html">Running Python Scripts</a></h2>
+<hr class="half-width">
+<ul>
+<li>A Python script is just a single Python file.</li>
+<li>Dependencies can be added to a script to make it self
+contained.</li>
+<li>Scripts can easily be run with uv which handles Python and
+installation and dependency management.</li>
+</ul></section><section id="projects"><h2 class="section-heading"><a href="projects.html">Working with Python Projects</a></h2>
+<hr class="half-width">
+<ul>
+<li>A Python project is just a directory of Python files with a
+<code>pyproject.toml</code> file for configuration.</li>
+<li>Use uv to easily add dependencies to a Python project and
+collaborate with other developers.</li>
+</ul></section><section id="tools"><h2 class="section-heading"><a href="tools.html">Using Python Tools</a></h2>
+<hr class="half-width">
+<ul>
+<li>A Python package with a command-line interface is a Python
+tool.</li>
+<li>A Python tool can be installed, run, and managed with the
+<code>uv tool</code> subcommand.</li>
+</ul></section>
 </div>
     </main>
 </div>
@@ -393,9 +421,9 @@
   "creativeWorkStatus": "active",
   "url": "https://ornl-training.github.io/python-with-uv/key-points.html",
   "identifier": "https://ornl-training.github.io/python-with-uv/key-points.html",
-  "dateCreated": "2025-08-07",
-  "dateModified": "2025-08-12",
-  "datePublished": "2025-08-12"
+  "dateCreated": "2025-08-13",
+  "dateModified": "2025-08-13",
+  "datePublished": "2025-08-13"
 }
 
   </script><script>

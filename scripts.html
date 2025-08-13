@@ -228,7 +228,6 @@
         <ul><li><a href="#what-is-a-python-script">What is a Python script?</a></li>
 <li><a href="#running-a-script-with-uv">Running a script with uv</a></li>
 <li><a href="#running-a-script-with-dependencies">Running a script with dependencies</a></li>
-<li><a href="#demo">Demo</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -311,7 +310,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Running Python Scripts</h1>
-        <p>Last updated on 2025-08-07 |
+        <p>Last updated on 2025-08-13 |
 
         <a href="https://github.com/ornl-training/python-with-uv/edit/main/episodes/scripts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -323,6 +322,29 @@
 
         
 
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul><li>What is a Python script?</li>
+<li>How can I run a Python script?</li>
+</ul></div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul><li>Learn about Python scripts and how to run them.</li>
+<li>Add dependencies to a Python script.</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
 <section><h2 class="section-heading" id="what-is-a-python-script">What is a Python script?<a class="anchor" aria-label="anchor" href="#what-is-a-python-script"></a></h2>
 <hr class="half-width"><p>A Python script is just a Python file like <code>example.py</code>. A
 Python file is also referred to as a module in the context of a Python
@@ -349,7 +371,11 @@ library.</p>
 <span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>    main()</span></code></pre>
 </div>
 <p>Use the following command to run the script with uv:</p>
-<pre><code>uv run example.py</code></pre>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">uv</span> run example.py</span></code></pre>
+</div>
 </section><section><h2 class="section-heading" id="running-a-script-with-dependencies">Running a script with dependencies<a class="anchor" aria-label="anchor" href="#running-a-script-with-dependencies"></a></h2>
 <hr class="half-width"><p>Below is the contents of another Python script named
 <code>example2.py</code>. This script imports the NumPy package which is
@@ -375,7 +401,11 @@ an external dependency (not included in Python).</p>
 <p>To run this code, uv must install the NumPy package so it can be
 imported by the script. The command shown below will add a script
 section that provides the Python version and list of dependencies.</p>
-<pre><code>uv add numpy --script example2.py</code></pre>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">uv</span> add numpy <span class="at">--script</span> example2.py</span></code></pre>
+</div>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -401,22 +431,41 @@ section that provides the Python version and list of dependencies.</p>
 </div>
 <p>Now you can execute the script using the same run command used in the
 previous example:</p>
-<pre><code>uv run example2.py</code></pre>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">uv</span> run example2.py</span></code></pre>
+</div>
 <p>By including the script section in a Python script, anyone can run
 that Python file with uv. You don’t have to worry about installing
 Python or creating a virtual environment and downloading dependencies.
 You just use uv to run the file and it will automatically install Python
 if it isn’t available on your computer and it will automatically install
 any dependencies needed to run the script.</p>
-</section><section><h2 class="section-heading" id="demo">Demo<a class="anchor" aria-label="anchor" href="#demo"></a></h2>
-<hr class="half-width"><p>Here is a demo of using uv to run a Python script that imports the
+<p>Here is a demo of using uv to run a Python script that imports the
 NumPy package. This recording is animated text (not video);
 consequently, the text for each command is selectable and can be copied
 and pasted into your own terminal.</p>
-<script src="https://asciinema.org/a/WAai54d95xSKIHCfTOQFpS6YX.js" id="asciicast-WAai54d95xSKIHCfTOQFpS6YX" async="true"></script><!--
+<script src="https://asciinema.org/a/WAai54d95xSKIHCfTOQFpS6YX.js" id="asciicast-WAai54d95xSKIHCfTOQFpS6YX" async="true"></script><div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul><li>A Python script is just a single Python file.</li>
+<li>Dependencies can be added to a script to make it self
+contained.</li>
+<li>Scripts can easily be run with uv which handles Python and
+installation and dependency management.</li>
+</ul></div>
+</div>
+</div>
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></section></div> <!-- / div.lesson-content -->
+ -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="system-python.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="projects.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -473,9 +522,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://ornl-training.github.io/python-with-uv/scripts.html",
   "identifier": "https://ornl-training.github.io/python-with-uv/scripts.html",
-  "dateCreated": "2025-08-07",
-  "dateModified": "2025-08-07",
-  "datePublished": "2025-08-12"
+  "dateCreated": "2025-08-13",
+  "dateModified": "2025-08-13",
+  "datePublished": "2025-08-13"
 }
 
   </script><script>

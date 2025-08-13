@@ -335,6 +335,8 @@ any links that you are not going to use.
  1. <a href="system-python.html">Operating System Python</a>
 </td>
 <td>
+Why not use the Python included with your operating system?<br>Why
+should I use a separate installation of Python?<br>::::::
 </td>
 </tr><tr><td>
 <span class="visually-hidden">Duration: </span>00h 07m
@@ -343,6 +345,7 @@ any links that you are not going to use.
  2. <a href="scripts.html">Running Python Scripts</a>
 </td>
 <td>
+What is a Python script?<br>How can I run a Python script?<br>::::::
 </td>
 </tr><tr><td>
 <span class="visually-hidden">Duration: </span>00h 14m
@@ -351,6 +354,8 @@ any links that you are not going to use.
  3. <a href="projects.html">Working with Python Projects</a>
 </td>
 <td>
+What is a Python project?<br>How do I create a Python project and run
+it?<br>::::::
 </td>
 </tr><tr><td>
 <span class="visually-hidden">Duration: </span>00h 26m
@@ -359,6 +364,8 @@ any links that you are not going to use.
  4. <a href="tools.html">Using Python Tools</a>
 </td>
 <td>
+What is a Python tool?<br>How can I install and run a Python
+tool?<br>::::::
 </td>
 </tr><tr><td>
 <span class="visually-hidden">Duration: </span>00h 38m
@@ -380,9 +387,31 @@ installation instructions are given in the <a href="https://docs.astral.sh/uv/ge
 documentation</a> but the main macOS, Linux, and Windows installation
 commands are presented below.</p>
 <p>Install uv on macOS and Linux with:</p>
-<pre><code>curl -LsSf https://astral.sh/uv/install.sh | sh</code></pre>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-LsSf</span> https://astral.sh/uv/install.sh <span class="kw">|</span> <span class="fu">sh</span></span></code></pre>
+</div>
 <p>Install uv on Windows with:</p>
-<pre><code>powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"</code></pre>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">powershell</span> <span class="at">-ExecutionPolicy</span> ByPass <span class="at">-c</span> <span class="st">"irm https://astral.sh/uv/install.ps1 | iex"</span></span></code></pre>
+</div>
+<p>You may need to restart your terminal to ensure that uv was
+installed. Check the installation by displaying the version number using
+the <code>--version</code> option as shown below. If the command
+displays the uv version number then the installation was successful.</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">uv</span> <span class="at">--version</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>uv 0.8.4 (e176e1714 2025-07-30)</code></pre>
+</div>
 <p>That’s it! You are now ready to run Python code. With uv you do not
 need to worry about installing Python or activating virtual
 environments, uv handles all of this for you.</p>
@@ -438,9 +467,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://ornl-training.github.io/python-with-uv/instructor/index.html",
   "identifier": "https://ornl-training.github.io/python-with-uv/instructor/index.html",
-  "dateCreated": "2025-08-07",
-  "dateModified": "2025-08-12",
-  "datePublished": "2025-08-12"
+  "dateCreated": "2025-08-13",
+  "dateModified": "2025-08-13",
+  "datePublished": "2025-08-13"
 }
 
   </script><script>
