@@ -2,7 +2,7 @@
 site: sandpaper::sandpaper_site
 ---
 
-This lesson introduces [uv](https://docs.astral.sh/uv/) which is a universal tool for installing Python and managing dependencies for Python projects.
+This workshop introduces [uv](https://docs.astral.sh/uv/) which is a universal tool for installing Python and managing dependencies for Python projects. Without uv it can be cumbersome to install Python especially if different Python versions are needed. Also, managing Python packages can be a nightmare for large projects and teams where it is essential that everyone has the same development environment. This workshop is for scientists, engineers, and programmers of all skill levels who want to learn about modern Python installation, dependency management, and reproducible environments for Python projects.
 
 ## Learning Objectives
 
@@ -17,3 +17,6 @@ After attending this workshop, participants will be able to:
 
 The uv tool is a fast Python package and project manager tool written in Rust. It is developed by Astral who also created ruff (linting and formatting) and ty (type checker). It replaces tools like pip, tox, conda, pipenv, poetry, pdm, pipx, and more. Different versions of Python can easily be managed with uv. A global cache is utilized for dependencies to prevent excessive package downloads and disk usage. It is the most simple and easiest way to install Python and run Python code and tools.
 
+:::::: prereq
+The only prerequisite for this workshop is a basic understanding of the command line interface (CLI) in the terminal. All operating systems include a terminal application so please make sure you know how to use your terminal before attending this workshop. On macOS the included terminal app is just called Terminal. On Linux desktop environments the terminal app may be called konsole, console, terminal, or some variant of the word "terminal". On Windows the included terminal application is called Windows Terminal.
+::::::
