@@ -40,7 +40,7 @@ if __name__ == "__main__":
 Use the following command to run the script with uv:
 
 ```bash
-uv run example.py
+$ uv run example.py
 ```
 
 ## Running a script with dependencies
@@ -67,8 +67,10 @@ if __name__ == "__main__":
 To run this code, uv must install the NumPy package so it can be imported by the script. The command shown below will add a script section that provides the Python version and list of dependencies.
 
 ```bash
-uv add numpy --script example2.py
+$ uv add numpy --script example2.py
 ```
+
+This is the script section that was added at the top of the Python file:
 
 ```python
 # /// script
@@ -95,7 +97,7 @@ if __name__ == "__main__":
 Now you can execute the script using the same run command used in the previous example:
 
 ```bash
-uv run example2.py
+$ uv run example2.py
 ```
 
 By including the script section in a Python script, anyone can run that Python file with uv. You don't have to worry about installing Python or creating a virtual environment and downloading dependencies. You just use uv to run the file and it will automatically install Python if it isn't available on your computer and it will automatically install any dependencies needed to run the script.
