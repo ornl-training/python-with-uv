@@ -43,6 +43,11 @@ Use the following command to run the script with uv:
 $ uv run example.py
 ```
 
+```output
+Script using standard Python
+Random number is 0.8227936022620481
+```
+
 ## Running a script with dependencies
 
 Below is the contents of another Python script named `example2.py`. This script imports the NumPy package which is an external dependency (not included in Python).
@@ -100,9 +105,14 @@ Now you can execute the script using the same run command used in the previous e
 $ uv run example2.py
 ```
 
+```output
+Hello from NumPy!
+a is [1 2 3 4 5]
+```
+
 By including the script section in a Python script, anyone can run that Python file with uv. You don't have to worry about installing Python or creating a virtual environment and downloading dependencies. You just use uv to run the file and it will automatically install Python if it isn't available on your computer and it will automatically install any dependencies needed to run the script.
 
-Here is a demo of using uv to run a Python script that imports the NumPy package. This recording is animated text (not video); consequently, the text for each command is selectable and can be copied and pasted into your own terminal.
+Below is a demo of using uv to run a Python script that imports the NumPy package. This recording is animated text (not video); consequently, the text in the demo is selectable and can be copied and pasted into your own terminal.
 
 <script src="https://asciinema.org/a/WAai54d95xSKIHCfTOQFpS6YX.js" id="asciicast-WAai54d95xSKIHCfTOQFpS6YX" async="true"></script>
 
