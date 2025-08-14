@@ -310,7 +310,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Using Python Tools</h1>
-        <p>Last updated on 2025-08-13 |
+        <p>Last updated on 2025-08-14 |
 
         <a href="https://github.com/ornl-training/python-with-uv/edit/main/episodes/tools.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -355,10 +355,12 @@ run the pycowsay tool with the provided text:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">uv</span> tool run pycowsay hello there!</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> uv tool run pycowsay hello there!</span></code></pre>
 </div>
-<p>The output from running this command is shown below:</p>
-<pre class="text"><code>  ------------
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>  ------------
 &lt; hello there! &gt;
   ------------
    \   ^__^
@@ -366,14 +368,18 @@ run the pycowsay tool with the provided text:</p>
        (__)\       )\/\
            ||----w |
            ||     ||</code></pre>
+</div>
 <p>An equivalent command to <code>uv tool run</code> is <code>uvx</code>
 which is demonstrated below.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">uvx</span> pycowsay hello there!</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> uvx pycowsay hello there!</span></code></pre>
 </div>
-<pre class="text"><code>  ------------
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>  ------------
 &lt; hello there! &gt;
   ------------
    \   ^__^
@@ -381,6 +387,7 @@ which is demonstrated below.</p>
        (__)\       )\/\
            ||----w |
            ||     ||</code></pre>
+</div>
 </section><section><h2 class="section-heading" id="install-a-python-tool-with-uv">Install a Python Tool with uv<a class="anchor" aria-label="anchor" href="#install-a-python-tool-with-uv"></a></h2>
 <hr class="half-width"><p>Use the uv install command to globally install a Python tool on your
 system. To demonstrate this, the command shown below installs the genja
@@ -388,25 +395,31 @@ tool which is a static website generator built with Python.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">uv</span> tool install genja</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> uv tool install genja</span></code></pre>
 </div>
 <p>The genja tool can now be directly run from the command line without
 invoking uv such as:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">genja</span> <span class="at">--version</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> genja <span class="at">--version</span></span></code></pre>
 </div>
-<p>This will output the following:</p>
-<pre class="text"><code><span><span class="fl">25.3</span></span></code></pre>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="fl">25.3</span></span></code></pre>
+</div>
 <p>Use the list command to show all the tools installed by uv:</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> uv tool list</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="ex">genja</span> v25.3.1</span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="ex">-</span> genja </span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> uv tool list</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>genja v25.3.1
+- genja </code></pre>
 </div>
 <p>Here is a demonstration of using uv to work with Python tools.</p>
 <script src="https://asciinema.org/a/GjafY19S5PktSmK365hPkOLG1.js" id="asciicast-GjafY19S5PktSmK365hPkOLG1" async="true"></script><div id="keypoints1" class="callout keypoints">
@@ -485,7 +498,7 @@ any links that you are not going to use.
   "url": "https://ornl-training.github.io/python-with-uv/tools.html",
   "identifier": "https://ornl-training.github.io/python-with-uv/tools.html",
   "dateCreated": "2025-08-14",
-  "dateModified": "2025-08-13",
+  "dateModified": "2025-08-14",
   "datePublished": "2025-08-14"
 }
 
