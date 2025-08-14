@@ -9,19 +9,19 @@ The only requirement for this workshop is the uv tool. Detailed installation ins
 Install uv on macOS and Linux with:
 
 ```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
+$ curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 Install uv on Windows with:
 
 ```bash
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+$ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
 You may need to restart your terminal to ensure that uv was installed. Check the installation by displaying the version number using the `--version` option as shown below. If the command displays the uv version number then the installation was successful.
 
 ```bash
-uv --version
+$ uv --version
 ```
 
 ```output

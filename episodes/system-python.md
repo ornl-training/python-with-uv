@@ -32,6 +32,6 @@ What version of Python is your operating system running? You can check this by r
 ::::::
 
 :::::: keypoints
-- Do not use the Python included with your operation system. Using the system Python can break system tools, cause permission errors, introduce version conflicts, limit reproducibility and flexibility with code development.
+- Do not use the Python included with your operating system. Using the system Python can break system tools, cause permission errors, introduce version conflicts, as well as limit reproducibility and flexibility with code development.
 - Use a tool like uv to install and manage Python instead of using the system Python. This will avoid all the issues associated with using the operating system Python.
 ::::::

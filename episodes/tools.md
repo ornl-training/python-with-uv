@@ -22,12 +22,10 @@ A Python tool is just a Python package that provides a command line interface (C
 The pycowsay package provides a command line interface for a talking cow based on text provided by the user. The uv command shown below will run the pycowsay tool with the provided text:
 
 ```bash
-uv tool run pycowsay hello there!
+$ uv tool run pycowsay hello there!
 ```
 
-The output from running this command is shown below:
-
-```text
+```output
   ------------
 < hello there! >
   ------------
@@ -41,10 +39,10 @@ The output from running this command is shown below:
 An equivalent command to `uv tool run` is `uvx` which is demonstrated below.
 
 ```bash
-uvx pycowsay hello there!
+$ uvx pycowsay hello there!
 ```
 
-```text
+```output
   ------------
 < hello there! >
   ------------
@@ -60,18 +58,16 @@ uvx pycowsay hello there!
 Use the uv install command to globally install a Python tool on your system. To demonstrate this, the command shown below installs the genja tool which is a static website generator built with Python.
 
 ```bash
-uv tool install genja
+$ uv tool install genja
 ```
 
 The genja tool can now be directly run from the command line without invoking uv such as:
 
 ```bash
-genja --version
+$ genja --version
 ```
 
-This will output the following:
-
-```text
+```output
 25.3
 ```
 
@@ -79,7 +75,9 @@ Use the list command to show all the tools installed by uv:
 
 ```bash
 $ uv tool list
+```
 
+```output
 genja v25.3.1
 - genja 
 ```

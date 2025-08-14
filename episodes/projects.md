@@ -24,13 +24,13 @@ A Python project is a directory containing multiple Python files. The metadata f
 Use the init command in uv to create a directory for a Python project. The command shown below creates a directory called my-project that represents a Python project.
 
 ```bash
-uv init my-project
+$ uv init my-project
 ```
 
 The contents of the directory is shown below. Notice that uv automatically sets up the directory as a Git repository and includes an ignore file to prevent unnecessary files from being committed to version control.
 
 ```bash
-cd my-project
+$ cd my-project
 ```
 
 ```output
@@ -46,7 +46,7 @@ my-project/
 You can also use uv to add dependencies to the project. Here we add the NumPy package to the project which will automatically create a virtual environment and install the NumPy package into the virtual environment.
 
 ```bash
-uv add numpy
+$ uv add numpy
 ```
 
 ```output
@@ -80,7 +80,7 @@ dependencies = [
 Lastly, to run a script in the project, just use the uv run command:
 
 ```bash
-uv run main.py
+$ uv run main.py
 ```
 
 ```output
