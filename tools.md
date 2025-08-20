@@ -19,7 +19,7 @@ A Python tool is just a Python package that provides a command line interface (C
 
 ## Run a Python Tool with uv
 
-The pycowsay package provides a command line interface for a talking cow based on text provided by the user. The uv command shown below will run the pycowsay tool with the provided text:
+The pycowsay package provides a command line interface for a talking cow based on text provided by the user. The uv command shown below will run the pycowsay package with the provided text. Notice there is no need to install Python, create a virtual environment, activate the virtual environment, and install the pycowsay package into the environment. You just use uv to directly run the pycowsay package; uv will handle installation and virtual environment creation automatically.
 
 ```bash
 $ uv tool run pycowsay hello there!
@@ -61,7 +61,7 @@ Use the uv install command to globally install a Python tool on your system. To 
 $ uv tool install genja
 ```
 
-The genja tool can now be directly run from the command line without invoking uv such as:
+The genja tool can now be run directly from the command line without invoking uv such as:
 
 ```bash
 $ genja --version
@@ -88,5 +88,6 @@ Here is a demonstration of using uv to work with Python tools.
 
 :::::: keypoints
 - A Python package with a command-line interface is a Python tool.
-- A Python tool can be installed, run, and managed with the `uv tool` subcommand.
+- A Python tool can be installed, run, and managed with the `uv tool` command.
+- With uv, Python tools can be easily installed on any operating system.
 ::::::

@@ -16,7 +16,7 @@ exercises: 2 # exercise time in minutes
 
 ## What is a Python script?
 
-A Python script is just a Python file like `example.py`. A Python file is also referred to as a module in the context of a Python package but for this lesson we will use the script definition.
+A Python script is just a Python file like `example.py`. A Python file is also referred to as a module in the context of a Python package but for this lesson we will refer to a Python file as a script.
 
 ## Running a script with uv
 
@@ -48,9 +48,11 @@ Script using standard Python
 Random number is 0.8227936022620481
 ```
 
+Without uv, you would typically run this Python script using the `$ python example.py` command in the terminal.
+
 ## Running a script with dependencies
 
-Below is the contents of another Python script named `example2.py`. This script imports the NumPy package which is an external dependency (not included in Python).
+Below is the contents of another Python script named `example2.py`. This script imports the NumPy package which is an external dependency (not included in the Python standard library).
 
 ```python
 # example2.py
@@ -119,5 +121,5 @@ Below is a demo of using uv to run a Python script that imports the NumPy packag
 :::::: keypoints
 - A Python script is just a single Python file.
 - Dependencies can be added to a script to make it self contained.
-- Scripts can easily be run with uv which handles Python and installation and dependency management.
+- Scripts can easily be run with uv which handles Python installation and dependency management.
 ::::::

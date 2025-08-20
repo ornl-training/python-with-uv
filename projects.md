@@ -27,7 +27,7 @@ Use the init command in uv to create a directory for a Python project. The comma
 $ uv init my-project
 ```
 
-The contents of the directory is shown below. Notice that uv automatically sets up the directory as a Git repository and includes an ignore file to prevent unnecessary files from being committed to version control.
+The contents of the directory are shown below. Notice that uv automatically sets up the directory as a Git repository (`.git/`) and includes an ignore file (`.gitignore`) to prevent unnecessary files from being committed to version control. The `.python-version` file contains the project's default Python version.
 
 ```bash
 $ cd my-project
@@ -43,7 +43,7 @@ my-project/
 └── README.md
 ```
 
-You can also use uv to add dependencies to the project. Here we add the NumPy package to the project which will automatically create a virtual environment and install the NumPy package into the virtual environment.
+You can also use uv to add dependencies to the project. Here we add the NumPy package to the project which will automatically create a virtual environment (`.venv/`) and install the NumPy package into the virtual environment. A `uv.lock` file is also created to ensure that developers working on the project are using a consistent set of package versions.
 
 ```bash
 $ uv add numpy
@@ -77,7 +77,24 @@ dependencies = [
 ]
 ```
 
-Lastly, to run a script in the project, just use the uv run command:
+Lastly, to run a script such as `main.py` in the project, just use the uv run command as shown below:
+
+```python
+# main.py
+
+import numpy as np
+
+
+def main():
+    print("Hello from my-project!")
+
+    a = np.array([1, 2, 3, 4, 5])
+    print("a is", a)
+
+
+if __name__ == "__main__":
+    main()
+```
 
 ```bash
 $ uv run main.py
@@ -90,13 +107,21 @@ a is [1 2 3 4 5]
 
 ## Collaborate on Python Projects with uv
 
-Collaborating on a Python project can be a daunting task because everyone needs to use the same version of Python and have the same dependencies (and versions of dependencies) installed in their virtual environment. However, uv makes collaboration very simple because it handles all of the installation steps for you. The basic steps for collaborating on a Python project with uv are:
+Collaborating on a Python project can be a daunting task because everyone needs to use the same version of Python and have the same dependencies (and versions of dependencies) installed in their virtual environment. For projects that contain a `pyproject.toml` file, uv makes collaboration very simple because it handles all of the installation steps for you. The basic steps for collaborating on a Python project with uv are:
 
 1. Download and install uv
 2. Download the Python project
-3. Run the Python code in the project with uv
+3. Run the Python code in the project with the `uv run` command
 
 That's it! There is no need to install Python on your computer, or create and activate a virtual environment, or install dependencies for running code in the Python project. This is all handled by uv when you run the code.
+
+For projects that don't provide a `pyproject.toml` file, you may need to manually create the virtual environment with uv then install dependencies with pip as summarized below. Unfortunately, there are many ways to setup a Python project, so the steps needed to install and run such a project may vary if there is no `pyproject.toml` file.
+
+1. Download and install uv
+2. Download the Python project
+3. Create the virtual environment for a specific Python version with `uv venv --python 3.12`
+4. Install dependencies in the environment with the `uv pip install` command
+5. Activate the virtual environment and run code with the `python` command
 
 :::::: keypoints
 - A Python project is just a directory of Python files with a `pyproject.toml` file for configuration.
