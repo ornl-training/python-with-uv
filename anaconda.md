@@ -20,7 +20,7 @@ exercises: 2 # exercise time in minutes
 
 It should be noted that Anaconda's license agreement requires organizations of more than 200 employees to purchase a business license. This may be cost prohibitive for some companies and institutions. Contrast this with uv which does not have such license restrictions.
 
-## What is pixi?
+## What is Pixi?
 
 [Pixi](https://pixi.sh/latest/) is a package manager that supports multiple programming languages including Python; although, its Python support is provided through uv. Pixi is a good alternative to Anaconda if you need to use libraries or packages that are only available through Conda.
 
