@@ -1,12 +1,12 @@
 ---
 title: Using Python Tools
-teaching: 10 # teaching time in minutes
-exercises: 2 # exercise time in minutes
+teaching: 5 # teaching time in minutes
+exercises: 5 # exercise time in minutes
 ---
 
 :::::: questions
 - What is a Python tool?
-- How can I install and run a Python tool?
+- How can I install, run, and manage a Python tool?
 ::::::
 
 :::::: objectives
@@ -17,7 +17,7 @@ exercises: 2 # exercise time in minutes
 
 A Python tool is just a Python package that provides a command line interface (CLI). These tools can be run directly with uv or installed globally just like any other command line application.
 
-## Run a Python Tool with uv
+## Run a Python tool with uv
 
 The pycowsay package provides a command line interface for a talking cow based on text provided by the user. The uv command shown below will run the pycowsay package with the provided text. Notice there is no need to install Python, create a virtual environment, activate the virtual environment, and install the pycowsay package into the environment. You just use uv to directly run the pycowsay package; uv will handle installation and virtual environment creation automatically.
 
@@ -53,9 +53,13 @@ $ uvx pycowsay hello there!
            ||     ||
 ```
 
-## Install a Python Tool with uv
+Here is a demo of using uvx to run the pycowsay tool:
 
-Use the uv install command to globally install a Python tool on your system. To demonstrate this, the command shown below installs the genja tool which is a static website generator built with Python.
+<script src="https://asciinema.org/a/GjafY19S5PktSmK365hPkOLG1.js" id="asciicast-GjafY19S5PktSmK365hPkOLG1" async="true"></script>
+
+## Install, upgrade, and remove a Python tool
+
+Use the uv install command to globally install a Python tool on your system. To demonstrate this, the command shown below installs the Genja tool which is a static website generator built with Python.
 
 ```bash
 $ uv tool install genja
@@ -82,9 +86,32 @@ genja v25.3.1
 - genja 
 ```
 
-Here is a demonstration of using uv to work with Python tools.
+Use the upgrade command to upgrade a single Python tool or all of the installed tools:
 
-<script src="https://asciinema.org/a/GjafY19S5PktSmK365hPkOLG1.js" id="asciicast-GjafY19S5PktSmK365hPkOLG1" async="true"></script>
+```bash
+# Upgrade a single tool
+$ uv tool upgrade genja
+
+# Upgrade all installed tools
+$ uv tool upgrade --all
+```
+
+To remove a tool, use the uninstall command:
+
+```bash
+$ uv tool uninstall genja
+```
+
+:::::: challenge
+
+What happens if you run `uvx jupyter notebook` in your terminal?
+
+::: solution
+
+You should see a Jupyter notebook running in your web browser. The file browser for the notebook shows the contents of the directory where the uvx command was run. This is the easiest way to run a Jupyter notebook to explore Python code.
+
+:::
+::::::
 
 :::::: keypoints
 - A Python package with a command-line interface is a Python tool.
