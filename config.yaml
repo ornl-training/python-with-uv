@@ -67,6 +67,7 @@ contact: 'team@carpentries.org' # FIXME
 # Order of episodes in your lesson
 episodes:
 - system-python.md
+- anaconda.md
 - scripts.md
 - projects.md
 - tools.md
