@@ -844,10 +844,10 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-tools"><p>Content from <a href="tools.html">Using Python Tools</a></p>
 <hr>
-<p>Last updated on 2025-08-20 |
+<p>Last updated on 2025-09-02 |
 
         <a href="https://github.com/ornl-training/python-with-uv/edit/main/episodes/tools.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -860,7 +860,7 @@ any links that you are not going to use.
 <h3 class="card-title">Questions</h3>
 <ul>
 <li>What is a Python tool?</li>
-<li>How can I install and run a Python tool?</li>
+<li>How can I install, run, and manage a Python tool?</li>
 </ul>
 </div>
 </div>
@@ -883,7 +883,7 @@ any links that you are not going to use.
 <p>A Python tool is just a Python package that provides a command line
 interface (CLI). These tools can be run directly with uv or installed
 globally just like any other command line application.</p>
-</section><section><h2 class="section-heading" id="run-a-python-tool-with-uv">Run a Python Tool with uv<a class="anchor" aria-label="anchor" href="#run-a-python-tool-with-uv"></a>
+</section><section><h2 class="section-heading" id="run-a-python-tool-with-uv">Run a Python tool with uv<a class="anchor" aria-label="anchor" href="#run-a-python-tool-with-uv"></a>
 </h2>
 <hr class="half-width">
 <p>The pycowsay package provides a command line interface for a talking
@@ -929,11 +929,12 @@ which is demonstrated below.</p>
            ||----w |
            ||     ||</code></pre>
 </div>
-</section><section><h2 class="section-heading" id="install-a-python-tool-with-uv">Install a Python Tool with uv<a class="anchor" aria-label="anchor" href="#install-a-python-tool-with-uv"></a>
+<p>Here is a demo of using uvx to run the pycowsay tool:</p>
+<script src="https://asciinema.org/a/GjafY19S5PktSmK365hPkOLG1.js" id="asciicast-GjafY19S5PktSmK365hPkOLG1" async="true"></script></section><section><h2 class="section-heading" id="install-upgrade-and-remove-a-python-tool">Install, upgrade, and remove a Python tool<a class="anchor" aria-label="anchor" href="#install-upgrade-and-remove-a-python-tool"></a>
 </h2>
 <hr class="half-width">
 <p>Use the uv install command to globally install a Python tool on your
-system. To demonstrate this, the command shown below installs the genja
+system. To demonstrate this, the command shown below installs the Genja
 tool which is a static website generator built with Python.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -964,8 +965,52 @@ invoking uv such as:</p>
 <pre class="output" tabindex="0"><code>genja v25.3.1
 - genja </code></pre>
 </div>
-<p>Here is a demonstration of using uv to work with Python tools.</p>
-<script src="https://asciinema.org/a/GjafY19S5PktSmK365hPkOLG1.js" id="asciicast-GjafY19S5PktSmK365hPkOLG1" async="true"></script><div id="keypoints1" class="callout keypoints">
+<p>Use the upgrade command to upgrade a single Python tool or all of the
+installed tools:</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Upgrade a single tool</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="ex">$</span> uv tool upgrade genja</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co"># Upgrade all installed tools</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="ex">$</span> uv tool upgrade <span class="at">--all</span></span></code></pre>
+</div>
+<p>To remove a tool, use the uninstall command:</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">$</span> uv tool uninstall genja</span></code></pre>
+</div>
+<div id="challenge1" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>What happens if you run <code>uvx jupyter notebook</code> in your
+terminal?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<p>You should see a Jupyter notebook running in your web browser. The
+file browser for the notebook shows the contents of the directory where
+the uvx command was run. This is the easiest way to run a Jupyter
+notebook to explore Python code.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
