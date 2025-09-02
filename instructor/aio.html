@@ -256,7 +256,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="scripts.html">2. Running Python Scripts</a>
+        <a href="anaconda.html">2. Anaconda and Pixi</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -268,7 +268,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="projects.html">3. Working with Python Projects</a>
+        <a href="scripts.html">3. Running Python Scripts</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -280,7 +280,19 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="tools.html">4. Using Python Tools</a>
+        <a href="projects.html">4. Working with Python Projects</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="tools.html">5. Using Python Tools</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -445,6 +457,86 @@ code development.</li>
 <li>Use a tool like uv to install and manage Python instead of using the
 system Python. This will avoid all the issues associated with using the
 operating system Python.</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-anaconda"><p>Content from <a href="anaconda.html">Anaconda and Pixi</a></p>
+<hr>
+<p>Last updated on 2025-09-02 |
+
+        <a href="https://github.com/ornl-training/python-with-uv/edit/main/episodes/anaconda.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 7 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What is Anaconda?</li>
+<li>What is pixi?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Recognize the use cases for Python programming with Anaconda.</li>
+<li>When to use Pixi for Python projects.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="what-is-anaconda">What is Anaconda?<a class="anchor" aria-label="anchor" href="#what-is-anaconda"></a>
+</h2>
+<hr class="half-width">
+<p><a href="https://www.anaconda.com/" class="external-link">Anaconda</a> is a popular package
+and dependency management platform used primarily for Python programming
+in data science and scientific computing. It is bundled with a wide
+range of pre-built packages and includes the Conda package manager.
+Anaconda/Conda offer package management support for C and C++ libraries
+and other programming languages but it is mostly used for Python.</p>
+<p>It should be noted that Anaconda’s license agreement requires
+organizations of more than 200 employees to purchase a business license.
+This may be cost prohibitive for some companies and institutions.
+Contrast this with uv which does not have such license restrictions.</p>
+</section><section><h2 class="section-heading" id="what-is-pixi">What is pixi?<a class="anchor" aria-label="anchor" href="#what-is-pixi"></a>
+</h2>
+<hr class="half-width">
+<p><a href="https://pixi.sh/latest/" class="external-link">Pixi</a> is a package manager that
+supports multiple programming languages including Python; although, its
+Python support is provided through uv. Pixi is a good alternative to
+Anaconda if you need to use libraries or packages that are only
+available through Conda.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Anaconda offers easy installation and package management for
+multi-language projects but its license restrictions can be cost
+prohibitive.</li>
+<li>Pixi is a good alternative to Anaconda/Conda but it still relies on
+uv for Python package management.</li>
+<li>For Python projects, uv offers better dependency management and
+faster installation compared to Anaconda/Conda and Pixi.</li>
 </ul>
 </div>
 </div>
@@ -1000,7 +1092,7 @@ terminal?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>You should see a Jupyter notebook running in your web browser. The
 file browser for the notebook shows the contents of the directory where
