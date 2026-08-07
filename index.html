@@ -385,6 +385,26 @@ displays the uv version number then the installation was successful.</p>
 <p>That’s it! You are now ready to run Python code. With uv you do not
 need to worry about installing Python or activating virtual
 environments, uv handles all of this for you.</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>If you get errors regarding an invalid certificate when running uv
+commands, try using the <code>--system-certs</code> option with the uv
+command. This will load TLS certificates from your computer’s native
+certificate store. This may be needed on corporate networks which handle
+system certificates differently than personal devices.</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="ex">uv</span> run <span class="at">--system-certs</span> example.py</span></code></pre>
+</div>
+</div>
+</div>
+</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
@@ -440,8 +460,8 @@ any links that you are not going to use.
   "url": "https://ornl-training.github.io/python-with-uv/index.html",
   "identifier": "https://ornl-training.github.io/python-with-uv/index.html",
   "dateCreated": "2025-08-14",
-  "dateModified": "2026-08-04",
-  "datePublished": "2026-08-04"
+  "dateModified": "2026-08-07",
+  "datePublished": "2026-08-07"
 }
 
   </script><script>
